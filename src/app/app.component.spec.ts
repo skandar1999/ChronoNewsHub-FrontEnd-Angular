@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ChronoNewss'`, () => {
+  it(`should have as title 'ChronoNew'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ChronoNewss');
+    expect(app.title).toEqual('ChronoNew');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ChronoNewss app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('ChronoNew app is running!');
   });
 });

@@ -1,0 +1,31 @@
+/* Button Styles */
+.btn {
+    padding: 15px 20px; /* Add padding to the buttons */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Set cursor to pointer for buttons */
+}
+
+.btn-submit {
+    background-color: #FF2143; /* Set background color of the submit button */
+    color: #fff; /* Set text color of the submit button */
+}
+
+.btn-signup {
+    background-color: #162736; /* Set background color of the signup button */
+    color: #fff; /* Set text color of the signup button */
+}
+
+/* Align buttons horizontally */
+.action {
+    display: inline-block; /* Display buttons inline */
+    margin-right: 10px; /* Add spacing between buttons */
+}
+
+/* Adjust button spacing on smaller screens */
+@media (max-width: 767px) {
+    .action {
+        margin-right: 0; /* Remove right margin on smaller screens */
+        margin-bottom: 10px; /* Add bottom margin to separate buttons vertically */
+        display: block; /* Display buttons as block elements on smaller screens */
+    }
+}

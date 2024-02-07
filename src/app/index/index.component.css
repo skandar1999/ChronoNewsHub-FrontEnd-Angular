@@ -1,0 +1,62 @@
+.youtube-area {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+}
+
+.video-items-active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.video-items {
+  max-width: 300px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-items video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.video-info {
+  margin-top: 40px;
+}
+
+.testmonial-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.single-video {
+  max-width: 300px;
+}
+
+.single-video video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.video-intro {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  text-align: center;
+}
+
+.video-intro h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
