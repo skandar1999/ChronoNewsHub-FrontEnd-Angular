@@ -1,30 +1,17 @@
 .btn {
-    border-radius: 20px;
+    border-radius: 24px;
 	background-color: #000000;
 	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 18px 35px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+	font-size: 17px;
+	padding: 20px 22px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px; 
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    text-transform: lowercase;
 }
 
-.btn-submit {
-    background-color: #FF2143; /* Set background color of the submit button */
-    color: #fff; /* Set text color of the submit button */
-}
 
-.btn-signup {
-    background-color: #162736; /* Set background color of the signup button */
-    color: #fff; /* Set text color of the signup button */
-}
-
-/* Align buttons horizontally */
-.action {
-    display: inline-block; /* Display buttons inline */
-    margin-right: 10px; /* Add spacing between buttons */
-}
 
 /* Adjust button spacing on smaller screens */
 @media (max-width: 767px) {
@@ -75,3 +62,30 @@
   
  
   
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #242424;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-bar button[type="submit"] {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar button[type="submit"] i {
+    color: #000000;
+}

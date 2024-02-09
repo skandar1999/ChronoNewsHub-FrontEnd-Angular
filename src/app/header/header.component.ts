@@ -1,4 +1,5 @@
-import { Component, OnInit, HostListener, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({

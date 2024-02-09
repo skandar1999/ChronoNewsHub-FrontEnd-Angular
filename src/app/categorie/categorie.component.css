@@ -1,3 +1,25 @@
 .container{
- margin-top:120px ;
+
+    margin-top:120px ;
   }
+
+  /* Style for navigation buttons */
+.nav-tabs .nav-item {
+    margin-right: 10px; /* Adjust spacing between navigation items */
+}
+
+.nav-tabs .nav-link {
+    color: #333; /* Text color */
+    font-weight: bold; /* Make text bold */
+    border: none; /* Remove border */
+    border-radius: 0; /* Remove border radius */
+    background-color: transparent; /* Transparent background */
+    padding: 10px 15px; /* Add padding */
+    transition: all 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-link:hover {
+    color: #FF2143; /* Change text color on hover or when active */
+    border-bottom: 2px solid #FF2143; /* Add bottom border on hover or when active */
+}
