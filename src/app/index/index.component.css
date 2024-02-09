@@ -1,17 +1,17 @@
 .youtube-area {
   background-color: #f9f9f9;
-  padding: 60px 0;
+  padding: 40px 0;
 }
 
 .video-items-active {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 .video-items {
-  max-width: 300px;
+  max-width: 320px;
   margin-bottom: 20px;
   overflow: hidden;
   border-radius: 10px;
@@ -59,4 +59,10 @@
   font-size: 18px;
   font-weight: bold;
   color: #333;
+}
+
+
+.container{
+
+  margin-top:120px ;
 }

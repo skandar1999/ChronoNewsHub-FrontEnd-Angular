@@ -1,8 +1,13 @@
-/* Button Styles */
 .btn {
-    padding: 15px 20px; /* Add padding to the buttons */
-    border: none; /* Remove default button border */
-    cursor: pointer; /* Set cursor to pointer for buttons */
+    border-radius: 20px;
+	background-color: #000000;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 18px 35px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
 }
 
 .btn-submit {
@@ -29,3 +34,44 @@
         display: block; /* Display buttons as block elements on smaller screens */
     }
 }
+
+
+.header-area {
+    position: fixed;
+    top: auto;
+    left: auto;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.main-content {
+    padding-top: 80px; /* Adjust this value to match the height of your fixed header */
+}
+
+
+/* Styling for the pulsating circle */
+.live-circle {
+    position: relative;
+    display: inline-block;
+    font-size: 14px; /* Adjust font size as needed */
+    color: rgb(255, 255, 255); /* Adjust color as needed */
+    animation: pulse 1s infinite alternate;
+    margin-right: -8px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+/* Animation keyframes for the pulse effect */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1.15);
+    }
+}
+
+
+  
+ 
+  
