@@ -1,53 +1,95 @@
 <body>
-<div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form action="#">
-			<a routerLink="/index"><img src="assets/img/logo/logo.png" alt="" class="logo"></a>
-			<h1>Create Account</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your email for registration</span>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
-		</form>
-	</div>
-	
-	<div class="form-container sign-in-container">
-		<form action="#">
-			<a routerLink="/index"><img src="assets/img/logo/logo.png" alt="" class="logo"></a>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <a routerLink="/index"><img src="assets/img/logo/logo.png" alt="" class="logo"></a>
+                <h2>Create Account</h2>
+            
+                <input type="username" placeholder="Username" [(ngModel)]="newUser.username" name="username"
+                    [ngClass]="{ 'error-input': errorMessage && errorMessage.includes('Username Already Exists') || videRegister }" />
+                <div id="usernameError" class="error-message" *ngIf="errorMessage && errorMessage.includes('Username Already Exists') ">{{ errorMessage }}</div>
+            
+                <input type="email" placeholder="Email" [(ngModel)]="newUser.email" name="email"
+                    [ngClass]="{ 'error-input': errorMessage && errorMessage.includes('Email Already Exists') || videRegister}" />
+                <div id="emailError" class="error-message" *ngIf="errorMessage && errorMessage.includes('Email Already Exists') ">{{ errorMessage }}</div>
+            
+                <input type="mobile" placeholder="Mobile" [(ngModel)]="newUser.mobile" name="mobile"
+                    [ngClass]="{ 'error-input': errorMessage && errorMessage.includes('Please check your phone number') || videRegister }" />
+                <div id="mobileError" class="error-message" *ngIf="errorMessage && errorMessage.includes('Please check your phone number') ">{{ errorMessage }}</div>
+            
+                <input type="password" placeholder="Password" [(ngModel)]="newUser.password" name="password"
+                [ngClass]="{ 'error-input': errorMessage && errorMessage.includes('Invalid Password') || videRegister}" />
+                <div id="passwordError" class="error-message" *ngIf="errorMessage && errorMessage.includes('Invalid Password') ">{{ errorMessage }}</div>
 
-			<h1>Sign in</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your account</span>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" id="signIn">Sign In</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button class="ghost" id="signUp">Sign Up</button>
-			</div>
-		</div>
-	</div>
-</div>
+                <button type="submit" class="registration" (click)="registerUser()" [disabled]="loading">
+                    <span *ngIf="loading">
+                        <i class="fa fa-spinner fa-spin"></i>
+                    </span>
+                    <span *ngIf="!loading">Sign Up</span>
+                </button>
+                <div *ngIf="videRegister" class="error-message">Please fill in all fields.</div>
+
+            </form>
+            
+            
+        </div>
+        
+
+        <div class="form-container sign-in-container">
+            <form>
+                <a routerLink="/index"><img src="assets/img/logo/logo.png" alt="" class="logo"></a>
+                <h3>Log in to your account</h3>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your account</span>
+                <input type="email" placeholder="Email" name="email" [(ngModel)]="user.email" 
+                [ngClass]="{ 'error-input': vide  }" />
+                
+
+                <input type="{{ hidePassword ? 'password' : 'text' }}" id="form1Example23" 
+                    name="password"
+                      [(ngModel)]="user.password"
+                      placeholder="Password"
+                      [ngClass]="{ 'error-input': vide  }"
+                    />
+                    <div class="input-group-append">
+                      <section class="toggle-password" (click)="togglePassword()">
+                        <i class="fa" [ngClass]="hidePassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+                      </section>
+                    </div>
+
+
+                <span *ngIf="loading" class="spinner">
+                    <i class="fa fa-spinner fa-spin"></i>
+                </span>
+
+                <button class="registration" (click)="onLoggedin()" [class.green]="!loading">Sign In</button>
+
+    
+
+                                    <a href="#">Forgot your password?</a>
+                <div *ngIf="vide" class="error-message">Please fill in all fields.</div>
+                <div *ngIf="err" class="error-message">{{ errorMessage }}</div>
+            </form>
+        </div>
+        
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h2>Welcome Back!</h2>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Enter your personal details and start journey with us</p>
+                    <button class="ghost" id="signUp">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>

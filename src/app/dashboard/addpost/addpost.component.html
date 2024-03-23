@@ -1,0 +1,115 @@
+<div  class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
+                ></i><a routerLink="/index"><img src="assets/img/logo/logo.png" alt=""></a>
+              </div>
+        <div class="list-group list-group-flush my-3">
+          <a routerLink="/addpost" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+              class="fas fa-tachometer-alt me-2"></i>Add Post</a>
+   
+      <a routerLink="/homeDashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              class="fa fa-image  me-2"></i>Liste of Posts</a>
+        
+            
+            <a routerLink="/commandePage" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-user me-2"></i>Users list</a>
+  
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-comment-dots me-2"></i>Chat</a>
+            
+            <a class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                    class="fas fa-power-off me-2"></i>Logout</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+  
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                <h2 class="fs-2 m-0">Dashboard</h2>
+            </div>
+  
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                      
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="container-fluid px-4">
+            <section class="text-center">
+                <!-- Background image -->
+                <div class="p-5 bg-image" style="height: 150px;"></div>
+                <!-- Background image -->
+        
+                <div class="card mx-4 mx-md-5 shadow-5-strong" style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
+                    <div class="card-body py-5 px-md-5">
+                        <h3 class="fs-4 mb-3">Add Post</h3>
+                        <div class="row mt-1">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form3Example1">Post title</label>
+                                            <input type="text" class="form-control" id="title" [(ngModel)]="newArticle.titre">
+                                        </div>
+                                    </div>
+        
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form3Example2">Post description</label>
+                                            <input type="text" class="form-control" id="content" [(ngModel)]="newArticle.contenu">
+                                        </div>
+                                    </div>
+        
+                            
+        
+                                    <!-- categorie input -->
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="categorie">Post category</label>
+                                        <select class="form-control custom-select" id="category" [(ngModel)]="newArticle.categorie">
+                                            <option value="Economic">Economic</option>
+                                            <option value="Politics">Politics</option>
+                                            <option value="Technology">Technology</option>
+                                            <option value="Sports">Sports</option>
+                                            <option value="Scientists">Scientists</option>
+                                        </select>
+                                    </div>
+        
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label" for="form3Example2">Post Image</label>
+                                        <input type="file" class="form-control" id="image" (change)="onFileSelected($event)">
+                                    </div>
+        
+                                    <button type="submit" class="registration" (click)="addNewArticle()">
+                                        <span>Add Post</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        
+        
+    
+    </div>
+</div>

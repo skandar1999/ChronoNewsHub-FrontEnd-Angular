@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,11 @@ import { ContactComponent } from './contact/contact.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ConnexionComponent } from './connexion/connexion.component';
-import { FormsModule} from '@angular/forms';  
+import { FormsModule} from '@angular/forms';
+import { HomeComponent } from './dashboard/home/home.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { ProfileComponent } from './profile/profile.component';
+import { AddpostComponent } from './dashboard/addpost/addpost.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +28,26 @@ import { FormsModule} from '@angular/forms';
     ContactComponent,
     CategorieComponent,
     BlogsComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    HomeComponent,
+    ProfileComponent,
+    AddpostComponent,
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('jwt');
+        },
+        allowedDomains: ['http://localhost:4200/']
+      }
+    }),
+
 
   ],
   providers: [],

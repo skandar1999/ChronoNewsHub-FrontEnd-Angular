@@ -8,6 +8,9 @@ import { ContactComponent } from './contact/contact.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { HomeComponent } from './dashboard/home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AddpostComponent } from './dashboard/addpost/addpost.component';
 
 
 
@@ -19,6 +22,9 @@ const routes: Routes = [
   { path: 'categorie', component: CategorieComponent },
   { path: 'Blogs', component: BlogsComponent },
   { path: 'connexion', component: ConnexionComponent },
+  { path: 'homeDashboard', component: HomeComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'addpost', component: AddpostComponent },
 
 ];
 

@@ -81,11 +81,12 @@ form {
 }
 
 input {
-	background-color: #eee;
-	border: none;
+	background-color: none;
+	border: 1px solid #6e6e6e;
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
+	border-radius: 8px;
 }
 
 .container {
@@ -95,8 +96,8 @@ input {
                 0 10px 10px rgba(0,0,0,0.22);
     position: relative;
     overflow: hidden;
-    max-width: 768px;
-    min-height: 520px;
+    max-width: 870px;
+    min-height: 600px;
 	margin:50px auto;
 }
 
@@ -231,26 +232,18 @@ input {
 	width: 40px;
 }
 
-.btn {
-    border-radius: 20px;
-	background-color: #000000;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 18px 35px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
-}
-
-.btn-submit {
-    background-color: #FF2143; /* Set background color of the submit button */
-    color: #fff; /* Set text color of the submit button */
-}
-
-.btn-signup {
-    background-color: #162736; /* Set background color of the signup button */
-    color: #fff; /* Set text color of the signup button */
+.registration {
+	width: 100%;
+    padding: 16px 32px;
+    border: 0;
+    border-radius: 8px;
+    background: #FF2143;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 16px;
+    cursor: pointer;
+    font-family: cnn_sans_display,helveticaneue,Helvetica,Arial,Utkal,sans-serif;
 }
 
 /* Align buttons horizontally */
@@ -282,17 +275,6 @@ input {
 }
 
 
-/* Styling for the pulsating circle */
-.live-circle {
-    position: relative;
-    display: inline-block;
-    font-size: 14px; /* Adjust font size as needed */
-    color: rgb(255, 255, 255); /* Adjust color as needed */
-    animation: pulse 1s infinite alternate;
-    margin-right: -8px;
-    margin-left: 10px;
-    text-decoration: none;
-}
 
 /* Animation keyframes for the pulse effect */
 @keyframes pulse {
@@ -303,12 +285,72 @@ input {
         transform: scale(1.15);
     }
 }
-
-
-  
  
 .logo {
-    width: 90px; /* Adjust width as needed */
+    width: 120px; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
     margin:  auto; /* Add margin between logo and sign-in form */
 }
+
+.error-message {
+    font-size: 14px;
+    line-height: 14px;
+    color: #c00;
+    display: block;
+    margin-top: 5px; 
+	margin-bottom: 5px; 
+	font-weight: bold;
+}
+
+.error-input {
+    border: 1px solid #c00;
+}
+
+
+.error-message.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+.input-group-append{
+	background-color: none;
+	border: none;
+
+}
+
+.input-group-append .fa {
+	
+    position: absolute;
+    right: 60px; 
+    top: 65%; 
+    font-size: 20px;
+	transform: translateY(-50%);
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+}
+
+
+/* Add animation to the Font Awesome spinner icon */
+.fa-spinner {
+    animation: spin 1s linear infinite; /* Apply spin animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Add this CSS for the spinner */
+.spinner {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px; 
+}
+
+
+
+
+
+  
