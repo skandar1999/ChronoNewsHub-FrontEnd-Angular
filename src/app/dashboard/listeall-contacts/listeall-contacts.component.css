@@ -1,0 +1,181 @@
+:root {
+    --main-bg-color: #009d63;
+    --main-text-color: #009d63;
+    --second-text-color: #bbbec5;
+    --second-bg-color: #eee;
+  }
+  
+  .primary-text {
+    color: var(--main-text-color);
+  }
+  
+  .second-text {
+    color: var(--second-text-color);
+  }
+  
+  .primary-bg {
+    background-color: var(--main-bg-color);
+  }
+  
+  .secondary-bg {
+    background-color: #eee;
+  }
+  
+  .rounded-full {
+    border-radius: 100%;
+  }
+  
+  #wrapper {
+    overflow-x: hidden;
+    background: linear-gradient(to right, #eee, #eee, #eee, #eee, #eee);
+  }
+  
+  #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin 0.25s ease-out;
+  }
+  
+  #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+  }
+  
+  #sidebar-wrapper .list-group {
+    width: 15rem;
+  }
+  
+  #page-content-wrapper {
+    min-width: 100vw;
+  }
+  
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+  }
+  
+  #menu-toggle {
+    cursor: pointer;
+  }
+  
+  .list-group-item {
+    border: none;
+    padding: 20px 30px;
+  }
+  
+  .list-group-item.active {
+    background-color: transparent;
+    color: var(--main-text-color);
+    font-weight: bold;
+  }
+  
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+  
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+  
+    #wrapper.toggled #sidebar-wrapper {
+      margin-left: -15rem;
+    }
+  }
+  
+  
+  .action-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 10px;
+    color: #555;
+    transition: color 0.3s;
+  }
+  
+  .action-btn:hover {
+    color: #ff0000; /* Change color on hover */
+  }
+  
+  .edit-btn .fa-edit:before {
+    content: '\f044'; /* Font Awesome code for edit icon */
+  }
+  
+  .delete-btn .fa-trash:before {
+    content: '\f2ed'; /* Font Awesome code for trash icon */
+  }
+  
+
+ /* Component CSS file or global styles */
+.status-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    position: relative;
+  }
+  
+  .empty-circle {
+    background-color: transparent;
+    border: 2px solid #ccc;
+  }
+  
+  .filled-circle {
+    background-color: #4CAF50;
+  }
+  
+  .status-circle i {
+    color: white;
+    font-size: 12px;
+  }
+  
+  /* Tooltip CSS */
+  .tooltip-inner {
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  .tooltip.bs-tooltip-top .arrow::before {
+    border-top-color: #333;
+  }
+  
+  .tooltip.bs-tooltip-bottom .arrow::before {
+    border-bottom-color: #333;
+  }
+  
+  /* Tooltip arrow styles */
+  .arrow::before {
+    position: absolute;
+    content: '';
+    border-style: solid;
+  }
+  
+  .arrow.bs-tooltip-top::before {
+    border-width: 5px 5px 0 5px;
+    border-color: transparent transparent transparent transparent;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .arrow.bs-tooltip-bottom::before {
+    border-width: 0 5px 5px 5px;
+    border-color: transparent transparent transparent transparent;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+
+  /* Component CSS file or global styles */
+.active-link {
+  color:#FF2143;
+  font-weight: bold;
+}

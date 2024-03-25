@@ -11,6 +11,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddpostComponent } from './dashboard/addpost/addpost.component';
+import { ListeallContactsComponent } from './dashboard/listeall-contacts/listeall-contacts.component';
 
 
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'homeDashboard', component: HomeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'addpost', component: AddpostComponent },
+  { path: 'contactliste', component: ListeallContactsComponent },
 
 ];
 

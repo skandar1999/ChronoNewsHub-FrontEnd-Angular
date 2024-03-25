@@ -17,6 +17,7 @@ import { HomeComponent } from './dashboard/home/home.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ProfileComponent } from './profile/profile.component';
 import { AddpostComponent } from './dashboard/addpost/addpost.component';
+import { ListeallContactsComponent } from './dashboard/listeall-contacts/listeall-contacts.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AddpostComponent } from './dashboard/addpost/addpost.component';
     HomeComponent,
     ProfileComponent,
     AddpostComponent,
+    ListeallContactsComponent,
   ],
   imports: [
     

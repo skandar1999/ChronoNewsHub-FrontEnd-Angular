@@ -5,20 +5,21 @@
                 ></i><a routerLink="/index"><img src="assets/img/logo/logo.png" alt=""></a>
               </div>
         <div class="list-group list-group-flush my-3">
-          <a routerLink="/addpost" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-              class="fas fa-tachometer-alt me-2"></i>Add Post</a>
-   
-      <a routerLink="/homeDashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            <a routerLink="/homeDashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
               class="fa fa-image  me-2"></i>Liste of Posts</a>
-        
+
+              <a routerLink="/addpost" routerLinkActive="active-link" class="list-group-item list-group-item-action bg-transparent second-text">
+                <i class="fas fa-tachometer-alt me-2"></i>Add Post
+            </a>
+            
             
             <a routerLink="/commandePage" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-user me-2"></i>Users list</a>
   
-            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                    class="fas fa-comment-dots me-2"></i>Chat</a>
+            <a routerLink="/contactliste" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-comment-dots me-2"></i>Chat list</a>
             
-            <a class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+            <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-power-off me-2"></i>Logout</a>
         </div>
     </div>
@@ -31,7 +32,8 @@
                 <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
                 <h2 class="fs-2 m-0">Dashboard</h2>
             </div>
-  
+         
+              
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -59,6 +61,7 @@
                 <!-- Background image -->
         
                 <div class="card mx-4 mx-md-5 shadow-5-strong" style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
+                
                     <div class="card-body py-5 px-md-5">
                         <h3 class="fs-4 mb-3">Add Post</h3>
                         <div class="row mt-1">
@@ -100,6 +103,16 @@
                                     <button type="submit" class="registration" (click)="addNewArticle()">
                                         <span>Add Post</span>
                                     </button>
+                                    
+                                    <div *ngIf="successMessage" class="alert alert-success" role="alert">
+                                        <i class="fas fa-check-circle"></i>
+                                        {{ successMessage }}
+                                  </div>
+
+                                  <div *ngIf="errorMessage" class="alert alert-warning" role="alert">
+                                    <i class="fas fa-check-circle"></i>
+                                    {{ errorMessage }}
+                              </div>
                                 </div>
                             </div>
                         </div>

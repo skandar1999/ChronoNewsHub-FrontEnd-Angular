@@ -21,9 +21,10 @@ export class HeaderComponent implements OnInit {
                 this.router.events.subscribe(event => {
                     if (event instanceof NavigationEnd) {
                         this.showHeader = !event.url.includes('/connexion') && !event.url.includes('/homeDashboard')
-                        && !event.url.includes('/addpost');
+                        && !event.url.includes('/addpost') && !event.url.includes('/contactliste');
                     }
                 });
+
             
                 this.route.params.subscribe(params => {
                     const token = params['token'];

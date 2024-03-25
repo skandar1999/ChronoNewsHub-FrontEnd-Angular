@@ -5,17 +5,16 @@
                 ></i><a routerLink="/index"><img src="assets/img/logo/logo.png" alt=""></a>
               </div>
         <div class="list-group list-group-flush my-3">
-            <a routerLink="/homeDashboard"  routerLinkActive="active-link" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
-                <i class="fa fa-image me-2"></i>Liste of Posts
-              </a>
-              
+            <a routerLink="/homeDashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+              class="fa fa-image  me-2"></i>Liste of Posts</a>
+
             <a routerLink="/addpost" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                 class="fas fa-tachometer-alt me-2"></i>Add Post</a>
             
             <a routerLink="/commandePage" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-user me-2"></i>Users list</a>
   
-            <a routerLink="/contactliste" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            <a routerLink="/contactliste"  routerLinkActive="active-link" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-comment-dots me-2"></i>Chat list</a>
             
             <a class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
@@ -29,7 +28,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
             <div class="d-flex align-items-center">
                 <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                <h2 class="fs-2 m-0">Dashboard </h2>
+                <h2 class="fs-2 m-0">Dashboard</h2>
             </div>
   
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -104,59 +103,63 @@
                   <div class="card shadow-5-strong" style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
                       <div class="card-body py-5 px-md-5">
                           <h3 class="fs-4 mb-3">Recent News</h3>
-                          <div class="table-responsive"  >
+                          <div class="table-responsive" >
                               <table class="table table-hover">
                                   <thead class="bg-light">
-                                      <tr> <th>Post Img</th>
-                                          <th>Post Title</th>
-                                          <th>Post Desription</th>
-                                          <th>Published Date</th>
-                                          <th>Category</th>
-                                          <th>Likes</th>
-                                          <th>disikes</th>
-                                          <th>Comments</th>
+                                      <tr> <th>Email</th>
+                                          <th>Message</th>
+                                          <th>Phone</th>
+                                          <th>Date</th>
+                                          <th>Status</th>
+
                                           <th></th>
                                       </tr>
                                   </thead>
                                   <tbody>
-                                      <tr *ngFor="let article of articles">
+                                    <tr *ngFor="let message of messages">
+                                         
                                           <td>
-                                            <div class="d-flex align-items-center">
-                                                <img   *ngIf="article.image" [src]="article.image" class="card-img-top" alt="Post Image" style="width: 60px; height: 60px; margin-bottom: 1.5px;">
-                                                <div class="ms-3">
-                                                </div>
+                                              <p class="fw-normal mb-1"> {{ message.emailUser  }}</p>
+                                          </td>
+                                          <td>
+                                              <p class="fw-normal mb-1">{{ message.description  }}</p>
+                                          </td>
+                                          <td>
+                                              <p class="fw-normal mb-1">{{ message.phoneUser }}</p>
+                                          </td>
+                                         
+                                          <td>
+                                            <p class="fw-normal mb-1"> {{ message.date }} </p>
+                                          </td>
+                                        
+                                          <td>
+                                            <div *ngIf="message.status === false"
+                                            class="status-circle empty-circle"
+                                            (click)="updateStatus(message)"
+
+                                                 data-toggle="tooltip"
+                                                 title="Mark as seen"
+                                                 data-placement="top">
+                                              <i class="fas fa-circle" ></i>
+                                            </div>
+                                            <div *ngIf="message.status === true"
+                                            class="status-circle filled-circle"
+                                                 data-toggle="tooltip"
+                                                 title="Seen"
+                                                 data-placement="top">
+                                              <i class="fas fa-check"></i>
                                             </div>
                                           </td>
-                                          <td>
-                                              <p class="fw-normal mb-1"> {{ article.titre }}</p>
-                                          </td>
-                                          <td>
-                                              <p class="fw-normal mb-1">{{ article.contenu }}</p>
-                                          </td>
-                                          <td>
-                                              <p class="fw-normal mb-1">{{ article.publish_date }}</p>
-                                          </td>
-                                          <td>
-                                            <p class="fw-normal mb-1">{{ article.categorie }}</p>
-                                        </td>
-                                          <td>
-                                            <p class="fw-normal mb-1"> {{ article.nb_likes }} </p>
-                                          </td>
-
-                                          <td>
-                                            <p class="fw-normal mb-1"> {{ article.nb_dislikes }} </p>
-                                          </td>
-                                          <td>
-                                            <p class="fw-normal mb-1"> {{ article.nb_comments }} </p>
-                                          </td>
-
+                                          
+                                        
+                                        
                                           
                                           <td>
-                                            <button class="action-btn edit-btn">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
-                                            <button class="action-btn delete-btn" (click)="deleteArticle(article.id)">
-                                                <i class="fas fa-trash"></i>
+                                            
+                                            <button class="action-btn delete-btn" >
+                                                <i class="fas fa-trash"
+                                                (click)="DeleteMessagee(message)"
+                                                ></i>
                                             </button>
                                         </td>
                                         

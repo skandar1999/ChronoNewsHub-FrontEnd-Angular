@@ -105,3 +105,10 @@
 .delete-btn .fa-trash:before {
   content: '\f2ed'; /* Font Awesome code for trash icon */
 }
+
+
+/* Component CSS file or global styles */
+.active-link {
+  color:#FF2143;
+  font-weight: bold;
+}

@@ -39,15 +39,20 @@ export class HomeComponent implements OnInit {
 
 
   deleteArticle(id: number): void {
-    this.articleService.deleteArticle(id).subscribe(
-      () => {
-        console.log('Article deleted successfully');
-        // Here you can update the articles array or refresh the list
-        this.getAllArticles();
-      },
-      (error) => {
-        console.error('Error deleting article:', error);
-      }
-    );
+    const confirmed = window.confirm('Are you sure you want to delete this article?');
+  
+    if (confirmed) {
+      this.articleService.deleteArticle(id).subscribe(
+        () => {
+          console.log('Article deleted successfully');
+          // Here you can update the articles array or refresh the list
+          this.getAllArticles();
+        },
+        (error) => {
+          console.error('Error deleting article:', error);
+        }
+      );
+    }
   }
+  
 }
