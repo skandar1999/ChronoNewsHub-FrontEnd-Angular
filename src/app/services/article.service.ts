@@ -38,4 +38,17 @@ export class ArticleService {
       const url = `${this.baseUrl}/addnewpost`;
       return this.http.post<any>(url, formData);
     }
+
+
+    getTechArticles(): Observable<any> {
+      return this.http.get<any>(`${this.baseUrl}/GetTechArticle`);
+    }
+
+    likeArticle(articleId: number): Observable<any> {
+      return this.http.post<any>(`${this.baseUrl}/likes/${articleId}`, {});
+    }
+
+    DislikeArticle(articleId: number): Observable<any> {
+      return this.http.post<any>(`${this.baseUrl}/Unlikes/${articleId}`, {});
+    }
 }

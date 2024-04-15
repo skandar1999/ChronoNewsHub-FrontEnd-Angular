@@ -24,9 +24,8 @@ export class HomeComponent implements OnInit {
       (data: Article[]) => {
         this.articles = data.map(article => {
           if (article.image) {
-            // Assuming the image path is relative to the server's base URL
             article.image = 'https://127.0.0.1:8000/ArticleImages/' + article.image;
-            console.log('Image URL:', article.image); // Log the image URL
+            console.log('Image URL:', article.image); 
           }
           return article;
         });

@@ -82,6 +82,11 @@ export class ConnexionService {
     return this.http.post<any>(`${this.baseUrl}/userCreate`, user);
   }
 
+  findUserByEmail(email: string): Observable<User> {
+    const url = `${this.baseUrl}/findByEmail/${email}`;
+    return this.http.get<User>(url);
+  }
+  
 
   login(user: User) {
     return this.http.post<any>(this.loginURL, user).pipe(
@@ -105,6 +110,14 @@ export class ConnexionService {
   logout() {
     window.localStorage.clear();
     this.isloggedIn = false;
+}
+
+
+isUser(): Boolean {
+  if (!this.isloggedIn)
+    //this.roles== undefiened
+    return false;
+  return this.isloggedIn;
 }
 
 

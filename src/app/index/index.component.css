@@ -63,6 +63,36 @@
 
 
 .container{
-
   margin-top:120px ;
+}
+
+
+/* Style for Like and Comment Icons */
+.like-comment-icons {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.like-comment-icons .like-icon,
+.like-comment-icons .comment-icon {
+  margin-right: 10px;
+  color: #7c7c7c;
+  cursor: pointer;
+}
+
+.like-comment-icons .like-icon i,
+.like-comment-icons .comment-icon i {
+  font-size: 17px; 
+}
+
+
+/* Liked Icon */
+.like-icon.liked i {
+  color: #FF2143; 
+}
+
+/* Disliked Icon */
+.like-icon.disliked i {
+  color: #313131; 
 }

@@ -59,16 +59,13 @@ export class ConnexionComponent implements OnInit {
             console.log('Response from backend:', response);
             if (response.status) {
                 this.successMessage = response.message;
-                // Set loading state to true only when the user is successfully created
                 this.loading = true;
-                // Navigate to the index page after a successful registration
                 setTimeout(() => {
-                    // Reset loading state and success message after navigation
                     this.loading = false;
                     this.successMessage = '';
                     // Toggle to sign-in view
                     this.toggleView();
-                }, 3000);
+                }, 2000);
             } else {
                 this.errorMessage = response.message;
                 // Reset error message after 3 seconds

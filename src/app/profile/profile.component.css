@@ -226,3 +226,47 @@ body {
   background-color: rgb(196, 43, 66); 
 }
 
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-button {
+  color: #000000;
+  border: none;
+  margin-top:30px;
+  margin-left: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 1px 8px;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: bold;
+}
+
+.toggle-button span {
+  margin-right: 5px;
+}
+
+.toggle-button i {
+  margin-left: 3px;
+}
+
+/* Hover effect */
+.toggle-button:hover {
+  background-color: #FF2143;
+  color: white;
+  border: 1px solid #FF2143;
+
+}
+
+/* Active effect */
+.toggle-button.active {
+  background-color: #FF2143;
+  color: white;
+  border: 1px solid #FF2143;
+
+}

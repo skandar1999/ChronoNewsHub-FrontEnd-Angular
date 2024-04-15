@@ -4,7 +4,7 @@
       <div class="col-lg-3">
         <!-- Image profile section -->
         <div class="image-profile">
-          <img src="assets/img/gallery/weeklyNews2.png" alt="Profile Image">
+          <img *ngIf="userImage" [src]="userImage" alt="Profile Image">
           <label for="image-input" class="file-input-label">
             <i
               class="fas fa-camera "
@@ -30,7 +30,7 @@
         <a class="logout-link" routerLink="/index" (click)="onLogout()" type="submit">
           <i class="fas fa-sign-out-alt"></i> Logout
         </a>
-        <a class="logout-link" routerLink="/homeDashboard" type="submit">
+        <a class="logout-link" routerLink="/homeDashboard" type="submit" *ngIf="yesadmin">
           <i class="fas fa-chart-bar"></i> Dashboard
         </a>
       </div>
@@ -38,40 +38,55 @@
       
       <div class="col-lg-9">
         <div class="acccount-settings">
-          <div class="user-details">
+          <div class="user-details" *ngIf="userData">
             <h3 style="font-weight: bold;">PERSONAL INFORMATION</h3>
             <h5>
               At NNews we take your privacy very seriously and are committed to the protection of your personal data. Learn more about how we care for and use your data in our Privacy Policy.
             </h5>
-            <h3 class="detail-item"><strong>YOUR EMAIL ADDRESS:</strong> </h3>
-            <h3 class="detail-item"><strong>USERNAME:</strong> </h3>
-            <h3 class="detail-item"><strong>PHONE NUMBER:</strong> </h3>
+            <h3 class="detail-item"><strong>YOUR EMAIL ADDRESS: </strong> {{ email }}</h3>
+            <h3 class="detail-item"><strong>USERNAME:</strong> {{ userData.username }}</h3>
+           <h3 class="detail-item"><strong>PHONE NUMBER:</strong> {{ mobile }}</h3>
           </div>
 
-          <h2 class="mb-4 pt-5">Modify Your Personal Information</h2>
-
-          <form>
+          <div class="header-container">
+            <h2 class="mb-4 pt-5">Modify Your Personal Information</h2>
+          
+            <button class="toggle-button" (click)="toggleForm('userInfoForm')" [ngClass]="{ 'active': showForm }">
+              <span>Show Form</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
+          
+          <form *ngIf="showForm" >
             <div class="form-group mb-4">
               <label>Email</label>
-              <input [readonly]="true" type="text" class="form-control"  name="email" />
+              <input [readonly]="true" type="text" class="form-control" name="email"  />
             </div>
-
+          
             <div class="form-group mb-4">
-              <label>Last Name</label>
-              <input type="text" autocomplete="off" class="form-control" name="lastname"  />
+              <label>Username</label>
+              <input type="text" autocomplete="off" class="form-control" name="username"  />
             </div>
-
+          
             <div class="form-group mb-4">
               <label>Mobile</label>
-              <input autocomplete="off" type="text" class="form-control" name="phone"  />
+              <input autocomplete="off" type="text" class="form-control" name="mobile" [(ngModel)]="mobile" />
             </div>
           </form>
+          
+          <div class="header-container">
+            <h2 class="mb-4 pt-5">Password Change</h2>
+          
+            <button class="toggle-button" (click)="toggleForm('passwordForm')" [ngClass]="{ 'active': showFormPassword }">
+              <span>Show Form</span>
+              <i class="fas fa-chevron-down"></i>
+            </button>
+          </div>
 
-          <form class="mt-5">
-            <h4>Password Change</h4>
-
-            <div class="form-group">
-              <label for="password">Current Password</label>
+        
+            <form *ngIf="showFormPassword">
+              <div class="form-group mb-4">             
+                <label class="mb-4 pt-5">Current Password</label>
               <div class="input-group">
                 <input autocomplete="off" class="form-control" name="PasswordActuelle" />
                 <div class="input-group-append">
@@ -80,8 +95,8 @@
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="password">New Password</label>
+            <div class="form-group mb-4">
+            <label for="password">New Password</label>
               <div class="input-group">
                 <input autocomplete="off" class="form-control" name="NewPassword" />
                 <div class="input-group-append">
@@ -90,7 +105,7 @@
               </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group mb-4">
               <label for="password">Confirm Password</label>
               <div class="input-group">
                 <input autocomplete="off" class="form-control" name="confirmPassword" />
@@ -101,7 +116,7 @@
             </div>
 
             <button type="submit" class="registration">Save Changes</button><br />
-          </form>
+            </form>
         </div>
       </div>
     </div>

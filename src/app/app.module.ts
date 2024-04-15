@@ -18,6 +18,14 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { ProfileComponent } from './profile/profile.component';
 import { AddpostComponent } from './dashboard/addpost/addpost.component';
 import { ListeallContactsComponent } from './dashboard/listeall-contacts/listeall-contacts.component';
+import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
+import { WeatherComponent } from './weather/weather.component';
+import { TestComponent } from './test/test.component';
+import { EconomicArticlesComponent } from './CategoryPages/economic-articles/economic-articles.component';
+import { PoliticsArticlesComponent } from './CategoryPages/politics-articles/politics-articles.component';
+import { TechnologyArticlesComponent } from './CategoryPages/technology-articles/technology-articles.component';
+import { SportsArticlesComponent } from './CategoryPages/sports-articles/sports-articles.component';
+import { ScientistsArticlesComponent } from './CategoryPages/scientists-articles/scientists-articles.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +42,14 @@ import { ListeallContactsComponent } from './dashboard/listeall-contacts/listeal
     ProfileComponent,
     AddpostComponent,
     ListeallContactsComponent,
+    ForbiddenPageComponent,
+    WeatherComponent,
+    TestComponent,
+    EconomicArticlesComponent,
+    PoliticsArticlesComponent,
+    TechnologyArticlesComponent,
+    SportsArticlesComponent,
+    ScientistsArticlesComponent,
   ],
   imports: [
     
