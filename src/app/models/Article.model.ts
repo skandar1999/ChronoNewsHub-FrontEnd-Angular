@@ -9,6 +9,7 @@ export class Article {
     nb_likes!:string;
     nb_dislikes!:string;
     nb_comments!:string;
-  
+    comments!: Comment[]; 
+
   }
   

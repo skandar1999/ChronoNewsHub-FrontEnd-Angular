@@ -1,0 +1,94 @@
+<section class="contact-section">
+    <div class="container">
+      <section class="whats-news-area pt-50 pb-20">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="home-content" *ngIf="article">
+              <img class="home-image" *ngIf="article.image" [src]="article.image" alt="">
+              <div class="home-details">
+                <h1 class="home-title">{{ article.titre }}</h1>
+                <p class="home-date">{{ article.publish_date | date: 'MMM d, yyyy' }}</p>
+                <div class="editorial-content">
+                  <h4>Editorial</h4>
+                  <p>{{ article.contenu }}</p>
+                </div>
+                <div class="like-comment-icons">
+                  <span class="like-icon">
+                    <i class="fas fa-thumbs-up"></i> {{ article.nb_likes }}
+                  </span>
+                  <span class="like-icon">
+                    <i class="fas fa-thumbs-down"></i> {{ article.nb_dislikes }}
+                  </span>
+                  <span class="comment-icon" >
+                    <i class="fas fa-comment"></i> {{ article.nb_comments }}
+                  </span>
+                </div>
+
+                <div *ngIf="articleComments.length > 0" class="existing-comments mt-30">
+                    <h3>Comments:</h3>
+                    <ul class="comment-list">
+                      <li *ngFor="let comment of articleComments" class="comment-item">
+                        <div class="comment-info">
+                          <strong><i class="fa fa-user"></i> Author:</strong> {{ comment.author }} |
+                          <strong>Date:</strong> {{ comment.dateCommentaire | date: 'MMM d, yyyy H:mm:ss' }}
+                        </div>
+                        <div class="comment-content">
+                          {{ comment.content }}
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div *ngIf="showCommentForm" class="new-comment-form mt-30">
+                    <h3>Write a Public Comment</h3>
+                    <form >
+                      <div class="form-group">
+                        <textarea id="commentContent" class="form-control" name="commentContent" [(ngModel)]="newComment.content" required placeholder="Write a public comment..."></textarea>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" id="commentAuthor" class="form-control" name="commentAuthor" [(ngModel)]="newComment.author" required placeholder="Complete Name">
+                      </div>
+                      <button type="submit" class="btn btn-primary" (click)="addComment()">Submit</button>
+                    </form>
+                  </div>
+                  <div *ngIf="videComment" class="error-message">Author and Content are required!</div>
+                  <div *ngIf="commentSent" class="success-message">Comment sent successfully!</div>
+                  
+                  <div *ngIf="!showCommentForm" class="mt-30">
+                    <button class="btn btn-secondary" (click)="toggleCommentForm()">Write a Public Comment</button>
+                  </div>
+                  
+                  <div *ngIf="showCommentForm" class="mt-30">
+                    <button class="btn btn-secondary" (click)="toggleCommentForm()">Hide Comment Form</button>
+                  </div>
+                                    
+                  
+                  
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-lg-4">
+            <!-- Most Recent Area -->
+            <div class="most-recent-area">
+              <!-- Section Title -->
+              <div class="small-tittle mb-0">
+                <h2>Most Recent Articles</h2>
+              </div>
+              <!-- Details -->
+              <div class="most-recent mb-40" *ngFor="let recommendedArticle of recommendedArticles.slice(0,3)">
+                <div class="most-recent-img">
+                  <img *ngIf="recommendedArticle.image" [src]="recommendedArticle.image" alt="">
+                  <div class="most-recent-cap">
+                    <h4><a href="#">{{ recommendedArticle.titre }}</a></h4>
+                    <p>{{ recommendedArticle.publish_date }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  

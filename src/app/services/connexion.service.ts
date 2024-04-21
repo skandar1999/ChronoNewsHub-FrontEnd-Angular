@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
-import { Observable, tap } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 
 import {
   HttpClient,
@@ -82,10 +82,6 @@ export class ConnexionService {
     return this.http.post<any>(`${this.baseUrl}/userCreate`, user);
   }
 
-  findUserByEmail(email: string): Observable<User> {
-    const url = `${this.baseUrl}/findByEmail/${email}`;
-    return this.http.get<User>(url);
-  }
   
 
   login(user: User) {
@@ -119,6 +115,41 @@ isUser(): Boolean {
     return false;
   return this.isloggedIn;
 }
+
+getAllUsers(): Observable<User[]> {
+  const url = `${this.baseUrl}/getAllUsers`;
+  return this.http.get<User[]>(url);
+}
+
+
+findUserByEmail(email: string): Observable<User> {
+  const url = `${this.baseUrl}/findByEmail/${email}`;
+  return this.http.get<User>(url);
+}
+updateUser(email: string , updatedUser: User): Observable<any> {
+  return this.http.put(`${this.baseUrl}/updateUser/${email}`, updatedUser);
+}
+
+UpdateImage(email: string, imageData: FormData): Observable<any> {
+  return this.http.post(`${this.baseUrl}/updateImage/${email}`, imageData);
+}
+
+
+
+checkPassword(email: string, password: string): Observable<boolean> {
+  const data = { password };
+  const url = `https://127.0.0.1:8000/checkpassword/${email}`;
+  return this.http.post(url, data).pipe(
+    map((response:any) => {
+      if (response && response.status) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+  );
+}
+
 
 
 }

@@ -12,7 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CategorieComponent } from './categorie/categorie.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { ConnexionComponent } from './connexion/connexion.component';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './dashboard/home/home.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ProfileComponent } from './profile/profile.component';
@@ -21,11 +21,13 @@ import { ListeallContactsComponent } from './dashboard/listeall-contacts/listeal
 import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
 import { WeatherComponent } from './weather/weather.component';
 import { TestComponent } from './test/test.component';
-import { EconomicArticlesComponent } from './CategoryPages/economic-articles/economic-articles.component';
 import { PoliticsArticlesComponent } from './CategoryPages/politics-articles/politics-articles.component';
 import { TechnologyArticlesComponent } from './CategoryPages/technology-articles/technology-articles.component';
 import { SportsArticlesComponent } from './CategoryPages/sports-articles/sports-articles.component';
 import { ScientistsArticlesComponent } from './CategoryPages/scientists-articles/scientists-articles.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { ArticlesDetailsComponent } from './articles-details/articles-details.component';
+import { AllUsersComponent } from './dashboard/all-users/all-users.component';
 
 @NgModule({
   declarations: [
@@ -45,18 +47,19 @@ import { ScientistsArticlesComponent } from './CategoryPages/scientists-articles
     ForbiddenPageComponent,
     WeatherComponent,
     TestComponent,
-    EconomicArticlesComponent,
     PoliticsArticlesComponent,
     TechnologyArticlesComponent,
     SportsArticlesComponent,
     ScientistsArticlesComponent,
+    ArticlesDetailsComponent,
+    AllUsersComponent,
   ],
   imports: [
-    
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    NgxPaginationModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
@@ -64,9 +67,7 @@ import { ScientistsArticlesComponent } from './CategoryPages/scientists-articles
         },
         allowedDomains: ['http://localhost:4200/']
       }
-    }),
-
-
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

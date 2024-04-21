@@ -1,213 +1,75 @@
-<main>
-                      
-    <section class="whats-news-area pt-50 pb-20 gray-bg">
+<main>              
+    <section class="whats-news-area pt-50 pb-20 ">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                <div class="whats-news-wrapper">
-                    <!-- Heading & Nav Button -->
-                    <div class="row justify-content-between align-items-end mb-15">
-                        <div class="col-xl-4">
-                            <div class="section-tittle mb-30">
-                                <h3>Recent New</h3>  </div>
-                        </div>
-                       
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="whats-news-wrapper">
+                <!-- Heading & Nav Button -->
+                <div class="row justify-content-between align-items-end mb-15">
+                  <div class="col-xl-4">
+                    <div class="section-tittle mb-30">
+                      <h3>Recent News</h3>
                     </div>
-                    <!-- Tab content -->
-                    <div class="row" >
-                        <div class="col-12">
-                            <!-- Nav Card -->
-                            <div class="tab-content" id="nav-tabContent">
-                                <!-- card one -->
-                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">       
-                                    <div class="row">
-                                        <!-- Left Details Caption -->
-                                        <div class="col-xl-6 col-lg-12" *ngFor="let article of articles">
-                                            <div class="whats-news-single mb-20 mb-20">
-                                                <div class="whates-img">
-                                                    <img *ngIf="article.image" [src]="article.image" alt="">
-                                                </div>
-                                                <div class="whates-caption">
-                                                    <h4>{{ article.titre }}</h4>
-                                                    <div class="info-section">
-                                                        <span>{{ article.publish_date }}</span>
-                                                        <div class="like-comment-icons" *ngIf="connexionService.isloggedIn">
-                                                            <!-- Like Icon -->
-                                                            <span class="like-icon" (click)="likeArticle(article.id)" [class.liked]="likedArticleId === article.id">
-                                                                <i class="fas fa-thumbs-up" [style.color]="likedArticleId === article.id ? '#FF2143' : ''"></i> {{ article.nb_likes }}
-                                                            </span>
-                                                        
-                                                            <!-- Dislike Icon -->
-                                                            <span class="like-icon" (click)="dislikeArticle(article.id)" [class.disliked]="dislikedArticleId === article.id">
-                                                                <i class="fas fa-thumbs-down" [style.color]="dislikedArticleId === article.id ? '#313131' : ''"></i> {{ article.nb_dislikes }}
-                                                            </span>
-                                                        
-                                                            <!-- Comment Icon -->
-                                                            <span class="comment-icon">
-                                                                <i class="fas fa-comment"></i> {{ article.nb_comments }} 
-                                                            </span>
-                                                        </div>
-                                                        
-                                                        
-                                                    </div>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        <!-- Right single caption -->
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        <!-- End Nav Card -->
-                        </div>
-                    </div>
+                  </div>
                 </div>
-                <!-- Banner -->
-                <div class="banner-one mt-20 mb-30">
-                    <img src="assets/img/gallery/body_card1.png" alt="">
-                </div>
-                </div>
-                <div class="col-lg-4">
-                    <!-- Flow Socail -->
-                    <div class="single-follow mb-45">
-                        <div class="single-box">
-                            <div class="follow-us d-flex align-items-center">
-                                <div class="follow-social">
-                                    <a href="#"><img src="assets/img/news/icon-fb.png" alt=""></a>
-                                </div>
-                                <div class="follow-count">  
-                                    <span>8,045</span>
-                                    <p>Fans</p>
-                                </div>
-                            </div> 
-                            <div class="follow-us d-flex align-items-center">
-                                <div class="follow-social">
-                                    <a href="#"><img src="assets/img/news/icon-tw.png" alt=""></a>
-                                </div>
-                                <div class="follow-count">
-                                    <span>8,045</span>
-                                    <p>Fans</p>
-                                </div>
-                            </div>
-                                <div class="follow-us d-flex align-items-center">
-                                <div class="follow-social">
-                                    <a href="#"><img src="assets/img/news/icon-ins.png" alt=""></a>
-                                </div>
-                                <div class="follow-count">
-                                    <span>8,045</span>
-                                    <p>Fans</p>
-                                </div>
-                            </div>
-                            <div class="follow-us d-flex align-items-center">
-                                <div class="follow-social">
-                                    <a href="#"><img src="assets/img/news/icon-yo.png" alt=""></a>
-                                </div>
-                                <div class="follow-count">
-                                    <span>8,045</span>
-                                    <p>Fans</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Most Recent Area -->
-                    <div class="most-recent-area">
-                        <!-- Section Tittle -->
-                        <div class="small-tittle mb-0">
-                        </div>
-                        <!-- Details -->
-                        <div class="most-recent mb-40" *ngFor="let article of articles">
-                            <div class="most-recent-img">
-                                <img *ngIf="article.image" [src]="article.image"alt="" >
-                                <div class="most-recent-cap">
-                                    <h4><a href="#">{{ article.titre }} <br>
-                                        </a></h4>
-                                    <p>{{ article.publish_date }}</p>
-                                </div>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-  
-    <div class="weekly2-news-area pt-50 pb-30 gray-bg">
-        <div class="container">
-            <div class="weekly2-wrapper">
+                <!-- Tab content -->
                 <div class="row">
-                    <!-- Banner -->
-                    <div class="col-lg-3">
-                        <div class="home-banner2 d-none d-lg-block">
-                            <img src="assets/img/gallery/body_card2.png" alt="">
-                        </div>
-                    </div>
-
-                    
-                    <div class="col-lg-9">
-                        <div class="slider-wrapper">
-                            <!-- section Tittle -->
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="small-tittle mb-30">
-                                        <h4>Most Popular</h4>
-                                    </div>
+                  <div class="col-12">
+                    <!-- Articles -->
+                    <div class="tab-content" id="nav-tabContent">
+                      <!-- Article List -->
+                      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="row">
+                          <!-- Display Paged Articles -->
+                          <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12" *ngFor="let article of pagedCollection"  >
+                            <div class="whats-news-single mb-20">
+                              <div class="whates-img">
+                                <img *ngIf="article.image" [src]="article.image" alt="img" (click)="OnArArticleSelected(article)">
+                              </div>
+                              <div class="whates-caption">
+                                <h4>{{ article.titre }}</h4>
+                                <div class="info-section">
+                                  <span>{{ article.publish_date }}</span>
+                                  <div class="like-comment-icons">
+                                    <span class="like-icon" (click)="likeArticle(article.id)" [class.liked]="likedArticleId === article.id">
+                                      <i class="fas fa-thumbs-up" [style.color]="likedArticleId === article.id ? '#FF2143' : ''"></i> {{ article.nb_likes }}
+                                    </span>
+                                    <span class="like-icon" (click)="dislikeArticle(article.id)" [class.disliked]="dislikedArticleId === article.id">
+                                      <i class="fas fa-thumbs-down" [style.color]="dislikedArticleId === article.id ? '#313131' : ''"></i> {{ article.nb_dislikes }}
+                                    </span>
+                                    <span class="comment-icon">
+                                      <i class="fas fa-comment" ></i> {{ article.nb_comments }}
+                                    </span>
+                                  </div>
                                 </div>
+                              </div>
                             </div>
-                            <!-- Slider -->
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="weekly2-news-active d-flex">
-                                        <!-- Single -->
-                                        <div class="weekly2-single">
-                                            <div class="weekly2-img">
-                                                <img src="assets/img/gallery/weeklyNews1.png" alt="">
-                                            </div>
-                                            <div class="weekly2-caption">
-                                                <h4><a href="#">Scarlett’s disappointment at latest accolade</a></h4>
-                                                <p>Jhon  |  2 hours ago</p>
-                                            </div>
-                                        </div> 
-                                        <!-- Single -->
-                                        <div class="weekly2-single">
-                                            <div class="weekly2-img">
-                                                <img src="assets/img/gallery/weeklyNews2.png" alt="">
-                                            </div>
-                                            <div class="weekly2-caption">
-                                                <h4><a href="#">Scarlett’s disappointment at latest accolade</a></h4>
-                                                <p>Jhon  |  2 hours ago</p>
-                                            </div>
-                                        </div> 
-                                        <!-- Single -->
-                                        <div class="weekly2-single">
-                                            <div class="weekly2-img">
-                                                <img src="assets/img/gallery/weeklyNews3.png" alt="">
-                                            </div>
-                                            <div class="weekly2-caption">
-                                                <h4><a href="#">Scarlett’s disappointment at latest accolade</a></h4>
-                                                <p>Jhon  |  2 hours ago</p>
-                                            </div>
-                                        </div> 
-                                        <!-- Single -->
-                                        <div class="weekly2-single">
-                                            <div class="weekly2-img">
-                                                <img src="assets/img/gallery/weeklyNews2.png" alt="">
-                                            </div>
-                                            <div class="weekly2-caption">
-                                                <h4><a href="#">Scarlett’s disappointment at latest accolade</a></h4>
-                                                <p>Jhon  |  2 hours ago</p>
-                                            </div>
-                                        </div> 
-                                    </div>
-                                </div>
-                            </div>
+                          </div>
                         </div>
+                        <!-- Pagination Controls -->
+                        <div class="row">
+                            <div class="col-12">
+                              <div class="pagination-container">
+                                <button class="pagination-btn" (click)="previousPage()" [disabled]="currentPage === 1">
+                                  <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <span class="pagination-info">Page {{ currentPage }} of {{ totalPages }}</span>
+                                <button class="pagination-btn" (click)="nextPage()" [disabled]="currentPage === totalPages">
+                                  <i class="fas fa-chevron-right"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          
+                      </div>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>           
+    </section>      
     
     <!-- Start Video Area -->
     <div class="youtube-area video-padding d-none d-sm-block">
@@ -308,5 +170,5 @@
         </div>
     </div>           
   
-    
+   
 </main>

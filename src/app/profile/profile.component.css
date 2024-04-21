@@ -13,40 +13,17 @@ body {
   padding: 50px;
 }
 
-.user-dashboard .nav {
-  margin-bottom: 20px;
-}
-
-.user-dashboard .nav-link {
-  padding: 10px 15px;
-  border-radius: 5px;
-  color: #333;
-  transition: background-color 0.3s;
-}
-
-.content .icon {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
 .image-profile img {
   width: 130px;
   height: 130px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #a0a0a0; /* Change border color to a modern color */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust box shadow */
-  transition: border-color 0.3s, box-shadow 0.3s; /* Add transition effect */
+  border: 3px solid #a0a0a0;
 }
 
 .image-profile img:hover {
-  border-color: #868686; /* Change border color on hover */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0); /* Adjust box shadow on hover */
+  border-color: #868686;
 }
-
 
 .user-dashboard .col-lg-3 {
   margin-bottom: 20px;
@@ -57,14 +34,6 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
-}
-
-.user-dashboard h4 {
-  margin-bottom: 20px;
-}
-
-.user-dashboard .form-group {
-  margin-bottom: 10px;
 }
 
 .user-dashboard label {
@@ -79,34 +48,6 @@ body {
   border: 1px solid #ced4da;
   border-radius: 5px;
   font-size: 1rem;
-}
-
-.user-dashboard .toggle-password {
-  cursor: pointer;
-}
-
-.user-dashboard .alert {
-  margin-top: 7px;
-  display: flex;
-  align-items: center;
-  background-color: #4caf50;
-  color: #fff;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.user-dashboard .alert .icon {
-  margin-right: 15px;
-}
-
-.user-dashboard .alert .text {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* Styling for error messages */
-.user-dashboard .notmatch {
-  color: #ff1717;
 }
 
 .user-dashboard .file-input-label {
@@ -128,7 +69,6 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Style for the input group to keep elements on the same line */
@@ -137,12 +77,6 @@ body {
   align-items: center;
 }
 
-.form-outline.d-flex.align-items-center {
-  display: flex;
-  align-items: center;
-}
-
-/* Style for the toggle icon */
 .toggle-password {
   cursor: pointer;
 }
@@ -197,7 +131,6 @@ body {
   margin-top: 120px;
 }
 
-
 .image-profile {
   position: relative;
 }
@@ -205,8 +138,8 @@ body {
 .image-profile .file-input-label {
   position: absolute;
   top: 70px;
-  left: 41%; /* Align the icon horizontally */
-  transform: translateX(-50%); /* Center the icon horizontally */
+  left: 41%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -215,15 +148,15 @@ body {
 .image-profile .file-input-label i {
   font-size: 20px;
   margin-right: 0.5rem;
-  color: #ffffff; /* Icon color */
-  background-color: #FF2143; /* Background color */
-  border-radius: 50%; /* Make the icon circular */
-  padding: 0.4rem; /* Add padding */
-  transition: background-color 0.3s; 
+  color: #ffffff;
+  background-color: #FF2143;
+  border-radius: 50%;
+  padding: 0.4rem;
+  transition: background-color 0.3s;
 }
 
 .image-profile .file-input-label i:hover {
-  background-color: rgb(196, 43, 66); 
+  background-color: rgb(196, 43, 66);
 }
 
 .header-container {
@@ -234,7 +167,7 @@ body {
 .toggle-button {
   color: #000000;
   border: none;
-  margin-top:30px;
+  margin-top: 30px;
   margin-left: 20px;
   cursor: pointer;
   display: flex;
@@ -248,7 +181,7 @@ body {
 }
 
 .toggle-button span {
-  margin-right: 5px;
+  margin-right: none;
 }
 
 .toggle-button i {
@@ -260,7 +193,6 @@ body {
   background-color: #FF2143;
   color: white;
   border: 1px solid #FF2143;
-
 }
 
 /* Active effect */
@@ -268,5 +200,45 @@ body {
   background-color: #FF2143;
   color: white;
   border: 1px solid #FF2143;
+}
 
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group .form-control {
+  flex: 1; /* Take up remaining space */
+  border: 1px solid #ced4da; /* Add border */
+  border-radius: 5px; /* Add border radius */
+  padding: 10px; /* Add padding */
+  font-size: 1rem; /* Adjust font size */
+}
+
+.input-group-append {
+  display: flex; /* Ensure child elements are aligned properly */
+}
+
+.input-group-append .input-group-text {
+  background-color: transparent; /* Set background to transparent */
+  border: none; /* Remove border */
+  cursor: pointer;
+}
+
+.input-group-append .fa {
+  font-size: 20px;
+  color: #000000;
+  cursor: pointer;
+  margin-left: 2px; /* Adjust spacing */
+}
+
+
+
+/* Style for the helper text */
+.helper-text {
+  position: absolute; /* Position absolutely relative to the parent */
+  top: calc(100% + 5px); /* Position below the input */
+  left: 0; /* Align with the left edge of the input group */
+  font-size: 14px; /* Adjust font size */
+  color: #999; /* Adjust color */
 }

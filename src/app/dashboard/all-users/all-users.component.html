@@ -11,13 +11,13 @@
             <a routerLink="/addpost" class="list-group-item list-group-item-action bg-transparent second-text active"><i
                 class="fas fa-tachometer-alt me-2"></i>Add Post</a>
             
-            <a routerLink="/Usersliste" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+            <a routerLink="/Usersliste" routerLinkActive="active-link" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-user me-2"></i>Users list</a>
   
             <a routerLink="/contactliste"  routerLinkActive="active-link" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                     class="fas fa-comment-dots me-2"></i>Chat list</a>
             
-        
+           
         </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -36,7 +36,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
   
-           
+            
         </nav>
         
 
@@ -90,65 +90,42 @@
                   <div class="p-5 bg-image" style="height: 150px;"></div>
                   <div class="card shadow-5-strong" style="margin-top: -100px; background: hsla(0, 0%, 100%, 0.8); backdrop-filter: blur(30px);">
                       <div class="card-body py-5 px-md-5">
-                          <h3 class="fs-4 mb-3">Chat List</h3>
-                          <div class="table-responsive" >
+                          <h2 class="fs-4 mb-3">Users List</h2>
+                          <div class="table-responsive"  *ngIf="users.length > 0" >
                               <table class="table table-hover">
                                   <thead class="bg-light">
-                                      <tr> <th>Email</th>
-                                          <th>Message</th>
-                                          <th>Phone</th>
-                                          <th>Date</th>
-                                          <th>Status</th>
-
+                                      <tr>  
+                                        <th>Email</th>
+                                        <th>Username</th>
+                                        <th>Mobile</th>
                                           <th></th>
                                       </tr>
                                   </thead>
                                   <tbody>
-                                    <tr *ngFor="let message of messages">
+                                    <tr *ngFor="let user of users">
                                          
                                           <td>
-                                              <p class="fw-normal mb-1"> {{ message.emailUser  }}</p>
+                                              <p class="fw-normal mb-1"> {{ user.email  }}</p>
                                           </td>
                                           <td>
-                                              <p class="fw-normal mb-1">{{ message.description  }}</p>
+                                              <p class="fw-normal mb-1">{{ user.username  }}</p>
                                           </td>
                                           <td>
-                                              <p class="fw-normal mb-1">{{ message.phoneUser }}</p>
+                                              <p class="fw-normal mb-1">{{ user.mobile }}</p>
                                           </td>
                                          
-                                          <td>
-                                            <p class="fw-normal mb-1"> {{ message.date }} </p>
-                                          </td>
                                         
-                                          <td>
-                                            <div *ngIf="message.status === false"
-                                            class="status-circle empty-circle"
-                                            (click)="updateStatus(message)"
-
-                                                 data-toggle="tooltip"
-                                                 title="Mark as seen"
-                                                 data-placement="top">
-                                              <i class="fas fa-circle" ></i>
-                                            </div>
-                                            <div *ngIf="message.status === true"
-                                            class="status-circle filled-circle"
-                                                 data-toggle="tooltip"
-                                                 title="Seen"
-                                                 data-placement="top">
-                                              <i class="fas fa-check"></i>
-                                            </div>
-                                          </td>
-                                          
+                                         
                                         
                                         
                                           
                                           <td>
                                             
-                                            <button class="action-btn delete-btn" >
+                                            <!-- <button class="action-btn delete-btn" >
                                                 <i class="fas fa-trash"
-                                                (click)="DeleteMessagee(message)"
+                                                
                                                 ></i>
-                                            </button>
+                                            </button> -->
                                         </td>
                                         
                                         

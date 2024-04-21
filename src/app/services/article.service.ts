@@ -51,4 +51,35 @@ export class ArticleService {
     DislikeArticle(articleId: number): Observable<any> {
       return this.http.post<any>(`${this.baseUrl}/Unlikes/${articleId}`, {});
     }
+
+    getArticleById(productId: string): Observable<any> {
+      const url = `${this.baseUrl}/getArticle/${productId}`; 
+      return this.http.get(url);
+    }
+
+
+    getComments(articleId: number): Observable<{ article: { id: number }, comments: Comment[] }> {
+      const url = `${this.baseUrl}/getComments/${articleId}`;
+      return this.http.get<{ article: { id: number }, comments: Comment[] }>(url);
+    }
+
+    addComment(comment: any): Observable<any> {
+      return this.http.post<any>(`${this.baseUrl}/addComment/${comment.articleId}`, comment);
+    }
+    
+
+    getEconomicArticles(): Observable<Article[]> {
+      const url = `${this.baseUrl}/GetEconomicArticle`;
+      return this.http.get<Article[]>(url);
+    }
+
+    GetPoliticsArticles(): Observable<Article[]> {
+      const url = `${this.baseUrl}/GetPoliticsArticle`;
+      return this.http.get<Article[]>(url);
+    }
+
+    GetScientistsArticles(): Observable<Article[]> {
+      const url = `${this.baseUrl}/GetScientistsArticle`;
+      return this.http.get<Article[]>(url);
+    }
 }

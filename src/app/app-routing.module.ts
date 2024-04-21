@@ -16,6 +16,12 @@ import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.componen
 import { UserGuard } from 'src/guards/user.guard';
 import { WeatherComponent } from './weather/weather.component';
 import { TestComponent } from './test/test.component';
+import { ArticlesDetailsComponent } from './articles-details/articles-details.component';
+import { AllUsersComponent } from './dashboard/all-users/all-users.component';
+import { PoliticsArticlesComponent } from './CategoryPages/politics-articles/politics-articles.component';
+import { ScientistsArticlesComponent } from './CategoryPages/scientists-articles/scientists-articles.component';
+import { TechnologyArticlesComponent } from './CategoryPages/technology-articles/technology-articles.component';
+import { SportsArticlesComponent } from './CategoryPages/sports-articles/sports-articles.component';
 
 
 
@@ -24,7 +30,6 @@ const routes: Routes = [
   { path: 'index', component: IndexComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'categorie', component: CategorieComponent ,canActivate: [UserGuard]},
   { path: 'Blogs', component: BlogsComponent  },
   { path: 'connexion', component: ConnexionComponent },
   { path: 'homeDashboard', component: HomeComponent },
@@ -34,6 +39,14 @@ const routes: Routes = [
   { path: 'forbiden', component: ForbiddenPageComponent },
   { path: 'weather', component: WeatherComponent },
   { path: 'test', component: TestComponent },
+  { path: 'articles/:id', component: ArticlesDetailsComponent }, 
+  { path: 'Usersliste', component: AllUsersComponent },
+
+  { path: 'Economic', component: CategorieComponent ,canActivate: [UserGuard]},
+  { path: 'Politics', component: PoliticsArticlesComponent ,canActivate: [UserGuard]},
+  { path: 'Scientists', component: ScientistsArticlesComponent ,canActivate: [UserGuard]},
+  { path: 'Techology', component: TechnologyArticlesComponent ,canActivate: [UserGuard]},
+  { path: 'Sports', component: SportsArticlesComponent ,canActivate: [UserGuard]},
 
 ];
 

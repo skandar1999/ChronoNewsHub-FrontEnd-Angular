@@ -16,11 +16,11 @@
                                     <!-- Nav Button -->                                            
                                     <nav>                                                 
                                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Economic</a>
-                                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Politics</a>
-                                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Technology</a>
-                                            <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">Sports</a>
-                                            <a class="nav-item nav-link" id="nav-Sports" data-toggle="tab" href="#nav-nav-Sport" role="tab" aria-controls="nav-contact" aria-selected="false">Scientists</a>
+                                            <a class="nav-item nav-link active" routerLink="/Economic" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Economic</a>
+                                            <a class="nav-item nav-link" routerLink="/Politics"  id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Politics</a>
+                                            <a class="nav-item nav-link" routerLink="/Techology" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Technology</a>
+                                            <a class="nav-item nav-link" routerLink="/Sports" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">Sports</a>
+                                            <a class="nav-item nav-link" routerLink="/Scientists" id="nav-Sports" data-toggle="tab" href="#nav-nav-Sport" role="tab" aria-controls="nav-contact" aria-selected="false">Scientists</a>
                                         </div>
                                     </nav>
                                     <!-- End Nav Button -->
@@ -36,72 +36,24 @@
                                     <!-- card one -->
                                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                         <div class="row">
-                                            <div class="col-lg-4 col-md-6"> <!-- Change col-xl-6 to col-lg-4 -->
+                                            <div class="col-lg-4 col-md-6" *ngFor="let article of articles; let i = index;">
+                                                <!-- Change col-lg-4 to col-lg-3 to fit 4 columns per row -->
                                                 <div class="whats-news-single mb-40 mb-40">
                                                     <div class="whates-img">
-                                                        <img src="assets/img/gallery/whats_news_details1.png" alt="">
+                                                        <img *ngIf="article.image" [src]="article.image" alt="">
                                                     </div>
                                                     <div class="whates-caption whates-caption2">
-                                                        <h4><a href="#">Secretart for Economic Air
-                                                                plane that looks like</a></h4>
-                                                        <span>by Alice cloe   -   Jun 19, 2020</span>
-                                                        <p>Struggling to sell one multi-million dollar home currently on the market won’t stop actress and singer Jennifer Lopez.</p>
+                                                        <h4><a href="#">{{ article.titre }}</a></h4>
+                                                        <span> {{ article.publish_date }}</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4 col-md-6"> <!-- Change col-xl-6 to col-lg-4 -->
-                                                <div class="whats-news-single mb-40 mb-40">
-                                                    <div class="whates-img">
-                                                        <img src="assets/img/gallery/whats_news_details1.png" alt="">
-                                                    </div>
-                                                    <div class="whates-caption whates-caption2">
-                                                        <h4><a href="#">Secretart for Economic Air
-                                                                plane that looks like</a></h4>
-                                                        <span>by Alice cloe   -   Jun 19, 2020</span>
-                                                        <p>Struggling to sell one multi-million dollar home currently on the market won’t stop actress and singer Jennifer Lopez.</p>
-                                                    </div>
-                                                </div>
-                                            </div><div class="col-lg-4 col-md-6"> <!-- Change col-xl-6 to col-lg-4 -->
-                                                <div class="whats-news-single mb-40 mb-40">
-                                                    <div class="whates-img">
-                                                        <img src="assets/img/gallery/whats_news_details1.png" alt="">
-                                                    </div>
-                                                    <div class="whates-caption whates-caption2">
-                                                        <h4><a href="#">Secretart for Economic Air
-                                                                plane that looks like</a></h4>
-                                                        <span>by Alice cloe   -   Jun 19, 2020</span>
-                                                        <p>Struggling to sell one multi-million dollar home currently on the market won’t stop actress and singer Jennifer Lopez.</p>
-                                                    </div>
-                                                </div>
-                                            </div><div class="col-lg-4 col-md-6"> <!-- Change col-xl-6 to col-lg-4 -->
-                                                <div class="whats-news-single mb-40 mb-40">
-                                                    <div class="whates-img">
-                                                        <img src="assets/img/gallery/whats_news_details1.png" alt="">
-                                                    </div>
-                                                    <div class="whates-caption whates-caption2">
-                                                        <h4><a href="#">Secretart for Economic Air
-                                                                plane that looks like</a></h4>
-                                                        <span>by Alice cloe   -   Jun 19, 2020</span>
-                                                        <p>Struggling to sell one multi-million dollar home currently on the market won’t stop actress and singer Jennifer Lopez.</p>
-                                                    </div>
-                                                </div>
-                                            </div><div class="col-lg-4 col-md-6"> <!-- Change col-xl-6 to col-lg-4 -->
-                                                <div class="whats-news-single mb-40 mb-40">
-                                                    <div class="whates-img">
-                                                        <img src="assets/img/gallery/whats_news_details1.png" alt="">
-                                                    </div>
-                                                    <div class="whates-caption whates-caption2">
-                                                        <h4><a href="#">Secretart for Economic Air
-                                                                plane that looks like</a></h4>
-                                                        <span>by Alice cloe   -   Jun 19, 2020</span>
-                                                        <p>Struggling to sell one multi-million dollar home currently on the market won’t stop actress and singer Jennifer Lopez.</p>
-                                                    </div>
-                                                </div>
-                                            </div>                                        </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

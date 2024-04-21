@@ -1,1 +1,62 @@
-<p>politics-articles works!</p>
+<main>
+    <div class="about-area2 gray-bg pt-90 pb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="whats-news-wrapper">
+                        <!-- Heading & Nav Button -->
+                        <div class="row justify-content-between align-items-end mb-15">
+                            <div class="col-xl-4">
+                                <div class="section-tittle mb-30">
+                                    <h3>Whats New</h3>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 col-md-9">
+                                <div class="properties__button">
+                                    <!-- Nav Button -->                                            
+                                    <nav>                                                 
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                            <a class="nav-item nav-link" routerLink="/Economic" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Economic</a>
+                                            <a class="nav-item nav-link active" routerLink="/Politics"  id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Politics</a>
+                                            <a class="nav-item nav-link" routerLink="/Techology" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Technology</a>
+                                            <a class="nav-item nav-link" routerLink="/Sports" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">Sports</a>
+                                            <a class="nav-item nav-link" routerLink="/Economic" id="nav-Sports" data-toggle="tab" href="#nav-nav-Sport" role="tab" aria-controls="nav-contact" aria-selected="false">Scientists</a>
+                                        </div>
+                                    </nav>
+                                    <!-- End Nav Button -->
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!-- Tab content -->
+                        <div class="row">
+                            <div class="col-12">
+                                <!-- Nav Card -->
+                                <div class="tab-content" id="nav-tabContent">
+                                    <!-- card one -->
+                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-6" *ngFor="let article of articles; let i = index;">
+                                                <!-- Change col-lg-4 to col-lg-3 to fit 4 columns per row -->
+                                                <div class="whats-news-single mb-40 mb-40">
+                                                    <div class="whates-img">
+                                                        <img *ngIf="article.image" [src]="article.image" alt="">
+                                                    </div>
+                                                    <div class="whates-caption whates-caption2">
+                                                        <h4><a href="#">{{ article.titre }}</a></h4>
+                                                        <span> {{ article.publish_date }}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

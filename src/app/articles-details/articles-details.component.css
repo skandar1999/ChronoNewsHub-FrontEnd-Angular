@@ -1,0 +1,104 @@
+
+.container{
+    margin-top: 30px;
+  }
+  /* Home Content */
+.home-content {
+  margin-bottom: 30px;
+}
+
+/* Home Image */
+.home-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Home Title */
+.home-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Home Date */
+.home-date {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Editorial Content */
+.editorial-content {
+  margin-bottom: 20px;
+}
+
+/* Like, Dislike, Comment Icons */
+.like-comment-icons {
+  margin-bottom: 20px;
+}
+
+.like-icon,
+.comment-icon {
+  margin-right: 20px;
+  color: #777;
+}
+
+/* Comments Section */
+.existing-comments {
+  margin-top: 30px;
+}
+
+.comment-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comment-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.comment-info {
+  font-size: 14px;
+  color: #777;
+}
+
+.comment-content {
+  margin-top: 5px;
+}
+
+
+
+
+.btn-primary {
+  color: #fff;
+  background-color: #FF2143;
+  border-color: #FF2143;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #FF2143;
+  border-color: #FF2143;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: #FF2143;
+  border-color: #FF2143;
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #FF2143;
+  border-color: #FF2143;
+}
+
+
+.success-message {
+  color: rgb(4, 112, 4);
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+}

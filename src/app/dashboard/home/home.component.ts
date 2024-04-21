@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from 'src/app/models/Article.model';
 import { ArticleService } from 'src/app/services/article.service';
+import { ConnexionService } from 'src/app/services/connexion.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   artilceData: any;
   articleImage!: string;
 
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleService,public connexionService: ConnexionService,) { }
 
   ngOnInit(): void {
     this.getAllArticles(); 
@@ -54,4 +55,8 @@ export class HomeComponent implements OnInit {
     }
   }
   
+  onLogout() {
+    this.connexionService.logout();
+  }
+
 }

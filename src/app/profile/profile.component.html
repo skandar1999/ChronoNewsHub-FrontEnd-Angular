@@ -20,6 +20,7 @@
                   id="image-input"
                   name="image"
                   style="display: none"
+                  (change)="onFileSelected($event)"
                 />
               </div>
             </form>
@@ -44,7 +45,7 @@
               At NNews we take your privacy very seriously and are committed to the protection of your personal data. Learn more about how we care for and use your data in our Privacy Policy.
             </h5>
             <h3 class="detail-item"><strong>YOUR EMAIL ADDRESS: </strong> {{ email }}</h3>
-            <h3 class="detail-item"><strong>USERNAME:</strong> {{ userData.username }}</h3>
+            <h3 class="detail-item"><strong>USERNAME:</strong> {{ username }}</h3>
            <h3 class="detail-item"><strong>PHONE NUMBER:</strong> {{ mobile }}</h3>
           </div>
 
@@ -60,18 +61,24 @@
           <form *ngIf="showForm" >
             <div class="form-group mb-4">
               <label>Email</label>
-              <input [readonly]="true" type="text" class="form-control" name="email"  />
+              <input [readonly]="true" type="text" class="form-control" name="email"  
+              value={{email}}/>
             </div>
           
             <div class="form-group mb-4">
               <label>Username</label>
-              <input type="text" autocomplete="off" class="form-control" name="username"  />
+              <input type="text" autocomplete="off" class="form-control" name="username" [(ngModel)]="username"
+              value={{username}}/>
             </div>
           
             <div class="form-group mb-4">
               <label>Mobile</label>
-              <input autocomplete="off" type="text" class="form-control" name="mobile" [(ngModel)]="mobile" />
+              <input autocomplete="off" type="text" class="form-control" name="mobile" [(ngModel)]="mobile" 
+              value={{mobile}} />
             </div>
+
+            <button type="submit" class="registration" (click)="updateUserData()">Save Changes</button><br />
+
           </form>
           
           <div class="header-container">
@@ -83,40 +90,72 @@
             </button>
           </div>
 
-        
-            <form *ngIf="showFormPassword">
-              <div class="form-group mb-4">             
-                <label class="mb-4 pt-5">Current Password</label>
-              <div class="input-group">
-                <input autocomplete="off" class="form-control" name="PasswordActuelle" />
-                <div class="input-group-append">
-                  <span class="input-group-text toggle-password"><i class="fa fa-eye"></i></span>
-                </div>
+          <form *ngIf="showFormPassword">
+              <!-- Current Password -->
+              <div class="form-group mb-4">
+                  <label for="password">Current Password</label>
+                  <div class="input-group">
+                      <input type="{{ hidePassword1 ? 'password' : 'text' }}" class="form-control" name="password" [(ngModel)]="password" />
+                      <div class="input-group-append">
+                          <span class="input-group-text toggle-password" (click)="togglePassword1()">
+                              <i class="fa" [ngClass]="hidePassword1 ? 'fa-eye' : 'fa-eye-slash'"></i>
+                          </span>
+                      </div>
+                  </div>
               </div>
-            </div>
 
-            <div class="form-group mb-4">
-            <label for="password">New Password</label>
-              <div class="input-group">
-                <input autocomplete="off" class="form-control" name="NewPassword" />
-                <div class="input-group-append">
-                  <span class="input-group-text toggle-password"><i class="fa fa-eye"></i></span>
-                </div>
-              </div>
-            </div>
+              <button type="submit" class="registration" (click)="checkPasswords()">Valider</button>
+              <span class="helper-text">To change your password, please fill in your current password</span>
 
-            <div class="form-group mb-4">
-              <label for="password">Confirm Password</label>
-              <div class="input-group">
-                <input autocomplete="off" class="form-control" name="confirmPassword" />
-                <div class="input-group-append">
-                  <span class="input-group-text toggle-password"><i class="fa fa-eye"></i></span>
-                </div>
-              </div>
-            </div>
+              <div *ngIf="!valideCurentPassword && errorMessagepw" class="text-danger">{{ errorMessagepw }}</div>
 
-            <button type="submit" class="registration">Save Changes</button><br />
             </form>
+          
+            <form *ngIf="valideCurentPassword">
+              <div class="form-group mb-4">
+              <label for="NewPassword">New Password</label>
+              <div class="input-group">
+                <input type="{{ hidePassword2 ? 'password' : 'text' }}" class="form-control" name="NewPassword" [(ngModel)]="NewPassword" />
+                <div class="input-group-append">
+                  <span class="input-group-text toggle-password" (click)="togglePassword2()">
+                    <i class="fa" [ngClass]="hidePassword2 ? 'fa-eye' : 'fa-eye-slash'"></i>
+                  </span>
+                </div>
+              </div>
+              <div *ngIf="errorMessagepw" class="text-danger">{{ errorMessagepw }}</div>
+            </div>
+          
+            <!-- Confirm Password -->
+            <div class="form-group mb-4">
+              <label for="confirmPassword">Confirm Password</label>
+              <div class="input-group">
+                <input type="{{ hidePassword3 ? 'password' : 'text' }}" class="form-control" name="confirmPassword" [(ngModel)]="confirmPassword" />
+                <div class="input-group-append">
+                  <span class="input-group-text toggle-password" (click)="togglePassword3()">
+                    <i class="fa" [ngClass]="hidePassword3 ? 'fa-eye' : 'fa-eye-slash'"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          
+          
+            <button type="button" class="registration" (click)="updateUserPassword()" [disabled]="!passwordMatch">Save Changes</button>
+            
+           
+
+            <div *ngIf="errorMessagepw" >
+              <span class="notmatch">{{ errorMessagepw }}</span>
+            </div>
+
+
+            <div *ngIf="notValid">
+              <span class="notmatch">Please check your new Password.</span>
+            </div> 
+ 
+            <div *ngIf="updateSuccess" class="text-success">Password updated successfully!</div>
+
+          </form>
+          
         </div>
       </div>
     </div>

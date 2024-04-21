@@ -2,6 +2,7 @@ import { ContactComponent } from './../../contact/contact.component';
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../../services/contact.service';
 import { Contact } from 'src/app/models/contact.model';
+import { ConnexionService } from 'src/app/services/connexion.service';
 
 
 declare var $: any; 
@@ -13,7 +14,9 @@ declare var $: any;
 export class ListeallContactsComponent implements OnInit {
   messages: any[] = [];
   isSuccess: boolean = false;
-  constructor(private contactService: ContactService) { }
+  constructor(private contactService: ContactService,
+    public connexionService: ConnexionService,
+  ) { }
 
 
   ngOnInit(): void {
@@ -75,5 +78,11 @@ export class ListeallContactsComponent implements OnInit {
       );
     }
   }
+
+
+  onLogout() {
+    this.connexionService.logout();
+  }
+
 }
 

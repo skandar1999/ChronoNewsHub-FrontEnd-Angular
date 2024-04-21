@@ -1,5 +1,4 @@
 
-  
   .secondary-bg {
     background-color: #eee;
   }
@@ -90,7 +89,6 @@
   }
   
 
- /* Component CSS file or global styles */
 .status-circle {
     width: 20px;
     height: 20px;
@@ -158,6 +156,11 @@
   
 
   /* Component CSS file or global styles */
+.active-link {
+  color:#FF2143;
+  font-weight: bold;
+}
+
 .active-link {
   color:#FF2143;
   font-weight: bold;
